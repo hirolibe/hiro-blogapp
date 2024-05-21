@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update]
 
   def index
     @articles = Article.all
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def new
@@ -15,9 +15,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = '保存できました！'
-      redirect_to article_path(@article)
-      # redirect_to article_path(@article), notice: '保存できたよ'
+      redirect_to article_path(@article), notice: '保存できたよ'
     else
       flash.now[:error] = '保存に失敗しました'
       render :new # new.html.erb(=:new)を表示する
@@ -25,11 +23,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to article_path(@article), notice: '更新できました'
     else
@@ -47,6 +43,10 @@ class ArticlesController < ApplicationController
   private
   def article_params
     params.require(:article).permit(:title, :content)
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 
 end
