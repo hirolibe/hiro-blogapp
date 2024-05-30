@@ -32,7 +32,7 @@ class Article < ApplicationRecord
   end
 
   def author_name
-    user.email.split('@').first
+    user.display_name
   end
 
   private
