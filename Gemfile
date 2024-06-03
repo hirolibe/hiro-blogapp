@@ -28,6 +28,7 @@ gem 'devise'
 gem 'faker'
 gem 'hamlit'
 gem 'net-http'
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'rubocop-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
