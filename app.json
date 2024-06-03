@@ -1,0 +1,16 @@
+{
+  "name": "hiro-blogapp",
+  "description": "This is blogapp",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/hirolibe/hiro-blogapp",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }]
+}
