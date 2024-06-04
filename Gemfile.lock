@@ -120,7 +120,7 @@ GEM
     erubis (2.7.0)
     faker (3.4.1)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.0)
+    ffi (1.16.3)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.3.0)
@@ -338,6 +338,7 @@ DEPENDENCIES
   dotenv-rails
   erb2haml
   faker
+  ffi (~> 1.16.3)
   hamlit
   jbuilder (~> 2.7)
   listen (~> 3.2)
