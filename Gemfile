@@ -29,6 +29,7 @@ gem 'hamlit'
 gem 'net-http'
 gem 'aws-sdk-s3', require: false
 gem 'ffi', '1.16.3'
+gem 'actiontext'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
