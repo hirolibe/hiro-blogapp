@@ -7,8 +7,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    # set_article(before_action)
-    @comments = @article.comments
   end
 
   def new
