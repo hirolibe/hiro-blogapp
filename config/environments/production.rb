@@ -111,7 +111,7 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   # 送信者のメールアドレスのドメイン
-  config.action_mailer.default_url_options = { host: 'example.com' }
+  config.action_mailer.default_url_options = { host: ENV['HEROKU_DOMAIN'] }
 
   # Mailgun
   ActionMailer::Base.smtp_settings = {
