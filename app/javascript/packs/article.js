@@ -20,6 +20,10 @@ const handleCommentForm = () => {
   })
 }
 
+const refreshComment = () => {
+  $('.comments-container').empty()
+}
+
 const appendNewComment = (comment) => {
   $('.comments-container').append(
     `<div class="article_comment"><p>${comment.content}</p></div>`
@@ -32,6 +36,7 @@ document.addEventListener('turbolinks:load', () => {
 
   axios.get(`/articles/${articleId}/comments`)
     .then((response) => {
+      refreshComment()
       const comments = response.data
       comments.forEach((comment) => {
         appendNewComment(comment)
@@ -43,7 +48,7 @@ document.addEventListener('turbolinks:load', () => {
 
   handleCommentForm()
 
-  $('.add-comment-button').on('click', () => {
+  $('.add-comment-button').off('click').on('click', () => {
     const content = $('#comment_content').val()
     if (!content.trim()) {
       window.alert('コメントを入力してください')
