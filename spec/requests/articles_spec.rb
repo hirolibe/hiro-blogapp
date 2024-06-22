@@ -23,6 +23,7 @@ RSpec.describe 'Articles', type: :request do
         expect(response).to have_http_status(302)
         expect(Article.last.title).to eq(article_params[:title])
         expect(Article.last.content.body.to_plain_text).to eq(article_params[:content])  # ActionTextのcontentは.body.to_plain_textで文字列に変換が必要
+        binding.pry
       end
     end
 
