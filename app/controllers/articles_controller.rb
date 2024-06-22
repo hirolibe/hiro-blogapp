@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article), notice: '保存できたよ'
     else
       flash.now[:error] = '保存に失敗しました'
-      render :new # new.html.erb(=:new)を表示する
+      render :new # new.html.haml(=:new)を表示する
     end
   end
 
